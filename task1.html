@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <button onclick="showDate()">Show Date</button>
+    <br>
+    <br>
+    <button onclick="showTime()">Show Time</button>
+    <p id="display"></p>    
+    <script>
+        function showDate() {
+            var currentDate = new Date();
+            var options = { day: 'numeric', month: 'long', year: 'numeric' };
+            var formattedDate = currentDate.toLocaleDateString('en-US', options);
+            document.getElementById("display").textContent = "Date: " + formattedDate;
+          }
+          
+          function showTime() {
+            var currentDate = new Date();
+            var options = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+            var formattedTime = currentDate.toLocaleTimeString('en-US', options);
+            var existingDate = document.getElementById("display").textContent;
+            document.getElementById("display").textContent = existingDate + " Time: " + formattedTime;
+          }
+          
+          
+          
+    </script>
+</body>
+</html>
